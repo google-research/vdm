@@ -1,0 +1,13 @@
+absl-py
+clu
+flax
+#jax # TPU version installed separately
+#jaxlib # TPU version installed separately
+matplotlib
+ml_collections
+numpy
+tensorflow
+tensorflow-datasets
+tensorflow-probability
+optax
+ipython
