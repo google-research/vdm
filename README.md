@@ -1,6 +1,6 @@
 # Variational Diffusion Models
 
-Jax/Flax Code for implementing Variational Diffusion Models (https://arxiv.org/abs/2107.00630)
+Jax/Flax Code for reproducing some key results of Variational Diffusion Models (https://arxiv.org/abs/2107.00630).
 
 ## Installation
 

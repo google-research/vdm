@@ -301,11 +301,10 @@ class Experiment(ABC):
     writer.write_scalars(step, eval_metrics)
 
     # sample a batch of images
-    images = metrics['images']
     samples = self.p_sample(params=params)
     samples = utils.generate_image_grids(samples)[None, :, :, :]
-    images['samples'] = samples.astype(np.uint8)
-    writer.write_images(step, images)
+    samples = {'samples': samples.astype(np.uint8)}
+    writer.write_images(step, samples)
 
   def train_step(self, base_rng, state, batch):
     rng = jax.random.fold_in(base_rng, jax.lax.axis_index('batch'))

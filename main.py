@@ -28,7 +28,7 @@ FLAGS = flags.FLAGS
 config_flags.DEFINE_config_file(
     "config", None, "Training configuration.", lock_config=False)
 flags.DEFINE_string("workdir", None, "Work unit directory.")
-flags.DEFINE_string("mode", 'train', "train / train-from-ckpt / eval")
+flags.DEFINE_string("mode", 'train', "train / eval")
 flags.DEFINE_string("model", 'vdm', 'vdm')
 flags.mark_flags_as_required(["config", "workdir"])
 flags.DEFINE_string("log_level", "info", "info/warning/error")
