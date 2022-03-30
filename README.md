@@ -6,10 +6,6 @@ Jax/Flax Code for implementing Variational Diffusion Models (https://arxiv.org/a
 
 ```pip install -r requirements.txt```
 
-## Evaluation of pre-trained models
-
-
-
 ## Training
 
 ### (Optional) Setting up a `v3-8` machine on Google Cloud Engine (GCE)
