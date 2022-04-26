@@ -38,7 +38,7 @@ def get_config():
       sample_softmax=False,
       antithetic_time_sampling=True,
       with_fourier_features=True,
-      with_attention=False,
+      with_attention=False, #originally this was True
 
       # configurations of the noise schedule
       gamma_type='learnable_scalar',  # learnable_scalar / learnable_nnet / fixed
@@ -47,7 +47,7 @@ def get_config():
 
       # configurations of the score model
       sm_n_timesteps=0,
-      sm_n_embd=320,
+      sm_n_embd=256,
       sm_n_layer=32,
       sm_pdrop=0.05,
   )

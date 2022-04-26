@@ -626,7 +626,7 @@ class Base2FourierFeatures(nn.Module):
 
     # Create Base 2 Fourier features
     w = 2.**(jnp.asarray(freqs, dtype=inputs.dtype)) * 2 * jnp.pi
-    w = w[None, :].tile((1, inputs.shape[-1]))
+    w = jnp.tile(w[None, :], (1, inputs.shape[-1]))
 
     # Compute features
     h = jnp.repeat(inputs, len(freqs), axis=-1)
