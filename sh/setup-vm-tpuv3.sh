@@ -12,16 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# OPTION 1: clone from repo
-#gcloud source repos clone vdm ~/vdm --project=vdm-xgcp
-
-# OPTION 2: copy from GS
-#mkdir ~/vdm
-#gsutil -m rsync -r gs://research-brain-vdm-xgcp/vdm-repo-rsync vdm
-
 # Install libraries
 pip3 install -U pip
 sudo pip uninstall -y jax jaxlib
 pip install "jax[tpu]>=0.2.16" -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
-
-pip3 install -r vdm/requirements.txt
+pip3 install --upgrade -r vdm/requirements.txt

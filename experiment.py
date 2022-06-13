@@ -267,11 +267,10 @@ class Experiment(ABC):
           with report_progress.timed('checkpoint'):
             ckpt.save(flax_utils.unreplicate(state))
 
-  def evaluate(self, workdir):
+  def evaluate(self, logdir, checkpoint_dir):
     """Perform one evaluation."""
     logging.info('=== Experiment.evaluate() ===')
 
-    checkpoint_dir = os.path.join(workdir, 'checkpoints-0')
     ckpt = checkpoint.Checkpoint(checkpoint_dir)
     state_dict = ckpt.restore_dict()
     params = flax.core.FrozenDict(state_dict['ema_params'])
@@ -280,7 +279,7 @@ class Experiment(ABC):
     # Distribute training.
     params = flax_utils.replicate(params)
 
-    eval_logdir = os.path.join(workdir, 'eval')
+    eval_logdir = os.path.join(logdir, 'eval')
     tf.io.gfile.makedirs(eval_logdir)
     writer = metric_writers.create_default_writer(
         eval_logdir, just_logging=jax.process_index() > 0)

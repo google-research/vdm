@@ -38,7 +38,7 @@ def get_config():
       sample_softmax=False,
       antithetic_time_sampling=True,
       with_fourier_features=True,
-      with_attention=False, #True in paper version
+      with_attention=True,
 
       # configurations of the noise schedule
       gamma_type='learnable_nnet',  # learnable_scalar / learnable_nnet / fixed
@@ -58,7 +58,7 @@ def get_config():
       num_steps_lr_warmup=100,
       num_steps_train=100_000_000,
       num_steps_eval=100,
-      batch_size_train=768, #1024 in paper version
+      batch_size_train=1024,
       batch_size_eval=1024,
       steps_per_logging=1000,
       steps_per_eval=10_000,
@@ -74,7 +74,7 @@ def get_config():
           eps=1e-8,
           weight_decay=0.01,
       ),
-      learning_rate=1e-4, #2e-4 in paper version
+      learning_rate=2e-4,
       lr_decay=False,
       ema_rate=0.9999,
   )

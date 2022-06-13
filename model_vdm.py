@@ -101,8 +101,8 @@ class VDM(nn.Module):
       t = jax.random.uniform(rng1, shape=(n_batch,))
 
     # discretize time steps if we're working with discrete time
-    if self.config.sm_n_timesteps > 0:
-      T = self.config.sm_n_timesteps
+    T = self.config.sm_n_timesteps
+    if T > 0:
       t = jnp.ceil(t * T) / T
 
     # sample z_t
@@ -115,7 +115,7 @@ class VDM(nn.Module):
     # compute MSE of predicted noise
     loss_diff_mse = jnp.sum(jnp.square(eps - eps_hat), axis=[1, 2, 3])
 
-    if self.config.sm_n_timesteps == 0:
+    if T == 0:
       # loss for infinite depth T, i.e. continuous time
       _, g_t_grad = jax.jvp(self.gamma, (t,), (jnp.ones_like(t),))
       loss_diff = .5 * g_t_grad * loss_diff_mse

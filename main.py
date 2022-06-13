@@ -28,6 +28,7 @@ FLAGS = flags.FLAGS
 config_flags.DEFINE_config_file(
     "config", None, "Training configuration.", lock_config=False)
 flags.DEFINE_string("workdir", None, "Work unit directory.")
+flags.DEFINE_string("checkpoint", '', "Checkpoint to evaluate.")
 flags.DEFINE_string("mode", 'train', "train / eval")
 flags.DEFINE_string("model", 'vdm', 'vdm')
 flags.mark_flags_as_required(["config", "workdir"])
@@ -58,7 +59,7 @@ def main(argv):
     logging.info("Training at workdir: "+FLAGS.workdir)
     experiment.train_and_evaluate(workdir)
   elif FLAGS.mode == "eval":
-    experiment.evaluate(FLAGS.workdir)
+    experiment.evaluate(FLAGS.workdir, FLAGS.checkpoint)
   else:
     raise Exception("Unknown FLAGS.mode")
 
