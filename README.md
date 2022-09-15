@@ -2,6 +2,10 @@
 
 Jax/Flax Code for reproducing some key results of Variational Diffusion Models (https://arxiv.org/abs/2107.00630).
 
+## Standalone Colab
+
+At `colab/SimpleDiffusionColab.ipynb` you will find an independent and stand-alone Colab implementation of a Variational Diffusion Model (VDM), serving as an easy-to-understand demonstration of the code and principles behind the paper. Thanks a lot to [Alex Alemi](https://www.alexalemi.com/) for implementing this Colab!
+
 ## Setup: Installing required libraries
 
 This code was tested on a TPU-v3 machine. For instructions on how to launch such a machine, see 'Setting up a `v3-8` machine' below.
@@ -94,7 +98,7 @@ gcloud alpha compute tpus tpu-vm ssh --project=[project] --zone=[zone] [machine-
 
 ## Acknowledgments
 
-We thank [Ruiqi Gao](https://ruiqigao.github.io/) for substantial contributions to this public VDM codebase.
+We thank [Ruiqi Gao](https://ruiqigao.github.io/) for substantial contributions to this public VDM codebase, and to [Alex Alemi](https://www.alexalemi.com/) for implementing `colab/SimpleDiffusionColab.ipynb`.
 
 ## Disclaimer
 
