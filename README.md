@@ -2,9 +2,11 @@
 
 Jax/Flax Code for reproducing some key results of Variational Diffusion Models (https://arxiv.org/abs/2107.00630).
 
-## Standalone Colab
+## Standalone Colabs
 
-At `colab/SimpleDiffusionColab.ipynb` you will find an independent and stand-alone Colab implementation of a Variational Diffusion Model (VDM), serving as an easy-to-understand demonstration of the code and principles behind the paper. [Link to open in Colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb). Thanks a lot to [Alex Alemi](https://www.alexalemi.com/) and [Ben Poole](https://cs.stanford.edu/~poole/) for implementing this Colab!
+At `colab/SimpleDiffusionColab.ipynb` you will find an independent and stand-alone Colab implementation of a Variational Diffusion Model (VDM), serving as an easy-to-understand demonstration of the code and principles behind the paper. [Link to open in Colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb). (Thanks a lot to [Alex Alemi](https://www.alexalemi.com/) and [Ben Poole](https://cs.stanford.edu/~poole/) for this implementation.)
+
+At `colab/2D_VDM_Example.ipynb` you will find an even more basic implementation, on a 2D swirl dataset and using MLPs. [Link to open in Colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/2D_VDM_Example.ipynb).
 
 ## Setup: Installing required libraries
 
